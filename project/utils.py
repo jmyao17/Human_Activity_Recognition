@@ -577,8 +577,8 @@ def plot_ggplot4classification_xyrange(df,xaxis,yaxis,zaxis, x_min, x_max, y_min
     
     chart = ggplot(df, aes(x=xaxis, y=yaxis, color=zaxis) ) \
         + geom_point(size=75,alpha=0.8) \
-        + ggtitle("Principal Components colored by digit")
-        + xlim(x_min, x_max)
+        + ggtitle("Principal Components colored by digit") \
+        + xlim(x_min, x_max)   \
         + ylim(y_min, y_max)
     
     return chart
