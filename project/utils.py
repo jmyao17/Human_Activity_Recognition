@@ -364,7 +364,52 @@ def knn_gridsearch(X_train,y_train,X_test,y_test,n_neighbors_range):
     return scores,knn_clf_best,cm_best,best_parameter
 
 
+def handcrafted_model(dfs, ratios, window_size, model):
+    
+    """
+        model: RandomForestClassifier()
+        """
+    
+    # set hyperparameters for the window
+    window_size_array    =  np.multiply(ratios, window_size)   # times of 0.5 second
+    step_size_array      =  window_size_array                  # same as window_size and thus no overlaping between samples
+    #     segments_balanced    = []
+    #     label_balanced       = []
+    
+    
+    
+    # generate balanced samples
+    segments_array_balanced = np.array(get_features_balanced(dfs, window_size_array, step_size_array))
+    segments_balanced_df = pd.DataFrame(segments_array_balanced)
+    segments_balanced_df.columns =['x_mean', 'y_mean', 'z_mean',
+                                   'x_var', 'y_var', 'z_var',
+                                   'x_max', 'y_max', 'z_max',
+                                   'x_min', 'y_min', 'z_min',
+                                   'x_mad', 'y_mad', 'z_mad',
+                                   'label']
+    segments_balanced_df['label'] = segments_balanced_df['label'].map(int)
+    
+    X = segments_balanced_df.iloc[:,:-1].values
+    y = segments_balanced_df['label'].iloc[:].values
+                                   
+    # scale the X
+    scaler_pipeline = Pipeline([('robust_scaler',RobustScaler())])
 
+    segments_scaled = []
+    segments_scaled.append(scaler_pipeline.fit_transform(X))
+    X_scaled = np.array(segments_scaled).squeeze()
+                                   
+                                   
+    # random state is choosen as 10% of each sample size
+    random_state = int(segments_balanced_df.shape[0]/70)
+    X_train, X_test, y_train, y_test = train_test_split(X_scaled, y, test_size = 0.2,
+                                                        random_state = random_state )
+                                   
+    model_clf = make_pipeline(RobustScaler(),model).fit(X=X_train, y=y_train)
+    y_pred   = model_clf.predict(X_test)
+    model_clf_cm = metrics.confusion_matrix(y_test,y_pred)
+                                   
+    return window_size, model_clf_cm
 
 
 def model_simple(num_feature,window_size):
