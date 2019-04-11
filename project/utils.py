@@ -2,48 +2,67 @@
 import pandas as pd
 import numpy as np
 
-import seaborn as sn
+from IPython.display import Image
+
+import seaborn as sns
 import matplotlib.pyplot as plt
-from matplotlib.ticker import MultipleLocator, FormatStrFormatter
-from matplotlib.ticker import AutoMinorLocator
+from matplotlib.ticker import MultipleLocator, FormatStrFormatter 
 import matplotlib.ticker as ticker
 from matplotlib.mlab import griddata
+from matplotlib import cm
+from matplotlib.ticker import (MultipleLocator, FormatStrFormatter,
+                               AutoMinorLocator)
 
 
-from sklearn.metrics import confusion_matrix, f1_score
+from sklearn.svm import LinearSVC, SVC 
 from sklearn.model_selection import cross_val_score
 from sklearn.pipeline import Pipeline
 from sklearn.pipeline import make_pipeline
-from sklearn.preprocessing import StandardScaler, RobustScaler
+from sklearn.preprocessing import StandardScaler, RobustScaler, PolynomialFeatures
 from sklearn.decomposition import PCA
 from sklearn.model_selection import train_test_split
 from sklearn import metrics
 from sklearn.neighbors import KNeighborsClassifier
-from sklearn.ensemble import RandomForestClassifier
+
 from sklearn.model_selection import GridSearchCV
-from sklearn.ensemble import VotingClassifier
 
 from sklearn.tree import DecisionTreeClassifier
 
+from sklearn.ensemble import RandomForestClassifier
+from sklearn.ensemble import BaggingClassifier
+from sklearn.ensemble import VotingClassifier
+from sklearn.ensemble import GradientBoostingClassifier
 
-import keras
+from sklearn.metrics import classification_report
+from sklearn.metrics import mean_squared_error
+from sklearn.metrics import confusion_matrix, f1_score
+
+import xgboost
+
+
+import time
+import keras 
 from keras import layers
 from keras.layers import Input, Dense, Activation, ZeroPadding2D, BatchNormalization, Flatten, Conv2D, LeakyReLU
 from keras.layers import AveragePooling2D, MaxPooling2D, Dropout, GlobalMaxPooling2D, GlobalAveragePooling2D
 from keras.models import Model, load_model
+ 
+#import tensorflow 
 from keras.models import Sequential
 from keras import backend as K
-import keras_metrics as km
+#from tensorflow.keras import backend as K
+#import keras_metrics as km
 
 from ipywidgets import IntProgress
 from IPython.display import display
-import time
-import ggplot
-from ggplot import *
+import time 
 
 import statsmodels.api as sm
 
+from scipy.stats import skew,kurtosis
 from scipy.stats import norm
+
+ import hickle as hkl
 
 
 import warnings
@@ -64,6 +83,7 @@ def load_data(features):
         print("Time Duration for the participant {} is {} seconds".format(i,np.ceil(df_temp.shape[0]/52)))
     return dfs
 
+ 
 
 
 def set_figstyle(xmin,xmax,ymin,ymax,xlabel,ylabel,how):
@@ -130,6 +150,10 @@ def plot_data_p1(df,features):
     plt.text(77*1000,2800,'6')
     plt.text(120*1000,2800,'7')
 
+    plt.text(10*1000, 2500, 'y')
+    plt.text(10*1000, 2250, 'z')
+    plt.text(10*1000, 1750, 'x')
+
 def plot_data4EachClass(df, features):
     
     """
@@ -173,7 +197,73 @@ def plot_data4EachClass(df, features):
         plt.legend()
 
 
-def get_features(dfs, window_size, step_size):
+def Fast_Fourier_Transformation(time_interval,st):
+    
+    # max frequency is determined by the smallest time interval
+    
+    # preprocess the data
+    # prepare the signa normalized to within [-1,1]
+    
+    st_norm = st - st.mean()
+    st = np.array(st_norm/st_norm.max())
+    
+    
+    # FFT
+    f_max  = 1/time_interval
+    N_mesh = st.size
+    freq = np.linspace(0, f_max-0.1, N_mesh)
+    fft  = np.fft.fft(st)
+    
+    # plot
+    plt.plot(freq[:N_mesh//2],abs(fft.real)[:N_mesh//2])
+    plt.ylabel('Amplitude',fontsize=16)
+    plt.xlabel('Frequency [Hz]',fontsize=16)
+    
+    fcs_sort = []
+    for i in range(N_mesh//2):
+        fcs_sort.append(freq[np.argsort(-abs(fft.real[:N_mesh//2]))[i]])
+    
+    return fcs_sort
+
+
+
+def get_Energy_Moments_FFT(time_interval,st,k):
+    
+    """
+        :st  -> signal as a function of time
+        :k   -> highest order
+        
+        return
+        ======
+        the n-order energy weighted sum, normalized to the highest order moment:
+        
+        M_n = sum_i  E^n_i * fft(E_i)
+        
+        """
+    
+    # max frequency is determined by the smallest time interval
+    #time_interval = t[1] - t[0]
+    
+    f_max = 1/time_interval
+    N_mesh = st.size
+    
+    freq = np.linspace(0, f_max, N_mesh)
+    fft = np.fft.fft(st)
+    
+    moments = []
+    
+    
+    for k in range(1,k+1):
+        moment_k = 0
+        for i in range(N_mesh//2):
+            moment_k += freq[i]**k*abs(fft.real[i])
+        moments.append(moment_k)
+     
+
+    return moments  
+
+
+def get_features(dfs, window_size, step_size, time_interval):
     
     # concat the data for all the 15 participants
     df = pd.concat(dfs[i] for i in range(0,len(dfs)))
@@ -195,19 +285,46 @@ def get_features(dfs, window_size, step_size):
             y_seg = df_class['y_acceleration'].values[start: end]
             z_seg = df_class['z_acceleration'].values[start: end]
             
+            
+            x_seg_norm = x_seg - x_seg.mean()
+            x_seg_st   = np.array(x_seg_norm/x_seg_norm.max())
+            
+            y_seg_norm = y_seg - y_seg.mean()
+            y_seg_st   = np.array(y_seg_norm/y_seg_norm.max())
+            
+            z_seg_norm = z_seg - z_seg.mean()
+            z_seg_st   = np.array(z_seg_norm/z_seg_norm.max())
+            
+            x_moments = get_Energy_Moments_FFT(time_interval,x_seg_st,3) #.reshape(1,3)  # order is set to be 3
+            y_moments = get_Energy_Moments_FFT(time_interval,y_seg_st,3) #.reshape(1,3)  # order is set to be 3
+            z_moments = get_Energy_Moments_FFT(time_interval,z_seg_st,3) #.reshape(1,3)  # order is set to be 3
+            
+            
             segments.append([x_seg.mean(), y_seg.mean(), z_seg.mean(),
                              x_seg.var(), y_seg.var(), z_seg.var(),
                              x_seg.max(), y_seg.max(), z_seg.max(),
                              x_seg.min(), y_seg.min(), z_seg.min(),
                              pd.DataFrame(x_seg).mad(), pd.DataFrame(y_seg).mad(),
-                             pd.DataFrame(z_seg).mad(),
+                             pd.DataFrame(z_seg).mad(), 
+                             x_seg.mean()**2+y_seg.mean()**2+z_seg.mean()**2,
+                             np.corrcoef(x_seg.squeeze(),y_seg.squeeze())[0,1],
+                             np.corrcoef(y_seg.squeeze(),z_seg.squeeze())[0,1],
+                             np.corrcoef(z_seg.squeeze(),x_seg.squeeze())[0,1],
+                             skew(x_seg)[0], skew(y_seg)[0], skew(z_seg)[0],
+                             kurtosis(x_seg)[0], kurtosis(y_seg)[0], kurtosis(z_seg)[0],
+                             x_moments[0],x_moments[1],x_moments[2],
+                             y_moments[0],y_moments[1],y_moments[2],
+                             z_moments[0],z_moments[1],z_moments[2], 
                              class_label])
 
     return segments
 
 
-def get_features_balanced(dfs, window_size_array, step_size_array):
+def get_features_balanced(dfs, window_size_array, step_size_array, time_interval):
     
+    """
+        time_interval: 1/52
+        """
     
     # concat the data for all the 15 participants
     df = pd.concat(dfs[i] for i in range(0,len(dfs)))
@@ -235,12 +352,36 @@ def get_features_balanced(dfs, window_size_array, step_size_array):
             y_seg = df_class['y_acceleration'].values[start: end]
             z_seg = df_class['z_acceleration'].values[start: end]
             
+            x_seg_norm = x_seg - x_seg.mean()
+            x_seg_st   = np.array(x_seg_norm/x_seg_norm.max())
+            
+            y_seg_norm = y_seg - y_seg.mean()
+            y_seg_st   = np.array(y_seg_norm/y_seg_norm.max())
+            
+            z_seg_norm = z_seg - z_seg.mean()
+            z_seg_st   = np.array(z_seg_norm/z_seg_norm.max())
+            
+            x_moments = get_Energy_Moments_FFT(time_interval,x_seg_st,3) #.reshape(1,3)  # order is set to be 3
+            y_moments = get_Energy_Moments_FFT(time_interval,y_seg_st,3) #.reshape(1,3)  # order is set to be 3
+            z_moments = get_Energy_Moments_FFT(time_interval,z_seg_st,3) #.reshape(1,3)  # order is set to be 3
+            
+            
             segments.append([x_seg.mean(), y_seg.mean(), z_seg.mean(),
                              x_seg.var(), y_seg.var(), z_seg.var(),
                              x_seg.max(), y_seg.max(), z_seg.max(),
                              x_seg.min(), y_seg.min(), z_seg.min(),
                              pd.DataFrame(x_seg).mad(), pd.DataFrame(y_seg).mad(),
                              pd.DataFrame(z_seg).mad(),
+                             # x_seg.sum(),y_seg.sum(),z_seg.sum(), # removed
+                             x_seg.mean()**2+y_seg.mean()**2+z_seg.mean()**2,
+                             np.corrcoef(x_seg.squeeze(),y_seg.squeeze())[0,1],
+                             np.corrcoef(y_seg.squeeze(),z_seg.squeeze())[0,1],
+                             np.corrcoef(z_seg.squeeze(),x_seg.squeeze())[0,1],
+                             skew(x_seg)[0], skew(y_seg)[0], skew(z_seg)[0],
+                             kurtosis(x_seg)[0], kurtosis(y_seg)[0], kurtosis(z_seg)[0],
+                             x_moments[0],x_moments[1],x_moments[2],
+                             y_moments[0],y_moments[1],y_moments[2],
+                             z_moments[0],z_moments[1],z_moments[2],
                              class_label])
         
         print("class: {}, window_size: {}, step_size: {}, sample_size: {}".format(class_label,window_size,step_size,sample_size))
@@ -364,7 +505,7 @@ def knn_gridsearch(X_train,y_train,X_test,y_test,n_neighbors_range):
     return scores,knn_clf_best,cm_best,best_parameter
 
 
-def handcrafted_model(dfs, ratios, window_size, model):
+def handcrafted_model(model, dfs, ratios, window_size, features, time_interval, overlap):
     
     """
         model: RandomForestClassifier()
@@ -372,22 +513,27 @@ def handcrafted_model(dfs, ratios, window_size, model):
     
     # set hyperparameters for the window
     window_size_array    =  np.multiply(ratios, window_size)   # times of 0.5 second
-    step_size_array      =  window_size_array                  # same as window_size and thus no overlaping between samples
-    #     segments_balanced    = []
-    #     label_balanced       = []
-    
-    
+    if overlap:
+        step_size_array      =  np.floor(window_size_array//2+1) # half overlap
+        filename             = 'HAR_Processed_Data_X34Y1_ovlp'+str(window_size)+'.csv'
+    else:
+        step_size_array      =  window_size_array  # same as window_size and thus no overlaping between samples
+        filename             = 'HAR_Processed_Data_X34Y1_no_ovlp'+str(window_size)+'.csv'
+        
+    step_size_array = step_size_array.astype(int)
     
     # generate balanced samples
-    segments_array_balanced = np.array(get_features_balanced(dfs, window_size_array, step_size_array))
+    segments_array_balanced = np.array(get_features_balanced(dfs, window_size_array, step_size_array, time_interval))
+
     segments_balanced_df = pd.DataFrame(segments_array_balanced)
-    segments_balanced_df.columns =['x_mean', 'y_mean', 'z_mean',
-                                   'x_var', 'y_var', 'z_var',
-                                   'x_max', 'y_max', 'z_max',
-                                   'x_min', 'y_min', 'z_min',
-                                   'x_mad', 'y_mad', 'z_mad',
-                                   'label']
+    print(segments_balanced_df.shape, len(features))
+
+    segments_balanced_df.columns = features
     segments_balanced_df['label'] = segments_balanced_df['label'].map(int)
+    
+    
+    
+    segments_balanced_df.to_csv(filename)
     
     X = segments_balanced_df.iloc[:,:-1].values
     y = segments_balanced_df['label'].iloc[:].values
@@ -413,6 +559,7 @@ def handcrafted_model(dfs, ratios, window_size, model):
 
 
 def model_simple(num_feature,window_size):
+    
     #create model
     model = Sequential()
     #add model layers
@@ -522,7 +669,7 @@ def plot_contour(x,y,z,xrange,yrange,zrange,xlabel,ylabel,zlabel,cmap):
     
     fs = 18
     fig = plt.figure(figsize=(8,6))
-    minorLocator = MultipleLocator(1)
+    #minorLocator = MultipleLocator(1)
     
     # grid/mesh
     xi2 = np.linspace(x.min(), x.max(), 1000)
@@ -726,3 +873,111 @@ def print_score4each(cm):
     score4each = pd.concat([precision4each,recall4each], axis=1)
     score4each.drop(['Label_r'], axis=1, inplace=True)
     return score4each
+
+
+def check_overfitting_rf(X_train,y_train,X_test,y_test,n_estimators, \
+                          max_depth, min_samples_split, metric_max):
+    
+    """
+    Input:
+    - X_train: features of training data
+    - y_train: class label of training data
+    - X_test:  features of test data
+    - y_test:  class label of test data
+    
+    Model parameters
+    
+    
+    - n_estimators: number of trees in the foreset 
+    - max_depth: max number of levels in each decision tree
+    - min_samples_split: min number of data points placed in a node before the node is split
+    
+    Output:
+    - metric_max: maximal metric value
+    """
+    
+    rf_clf = make_pipeline(RobustScaler(),
+                           RandomForestClassifier(
+                            n_estimators=n_estimators,
+                            max_depth=max_depth,
+                            min_samples_split=min_samples_split)).fit(X=X_train, y=y_train)
+                               
+    y_pred4test    = rf_clf.predict(X_test)
+    y_pred4train   = rf_clf.predict(X_train)
+    
+
+    f14train = f1_score(y_train, y_pred4train, average='weighted')
+    f14test  = f1_score(y_test, y_pred4test, average='weighted')
+
+    metric = f14test - 1.5*abs(f14train-f14test)  #  play with the weights
+
+    if metric > metric_max:
+        print("n_estimators: {}, max_depth:{}, min_samples_split:{}" "\n"
+              "f1(weighted)/Train:{:.2f}, f1(weighted)/Test:{:.2f}, metric:{:.2f}".format(n_estimators,
+                                                                                          max_depth,
+                                                                                          min_samples_split,
+                                                                                          f14train,f14test,metric))
+        metric_max = metric
+    return metric_max
+
+def xgboost_fit_predict(X_train,y_train,X_test,y_test):
+    
+    xgb_reg = xgboost.XGBClassifier(n_estimators=1000, random_state=42)
+    
+    xgb_reg = xgb_reg.fit(X_train, y_train,
+                          eval_set=[[X_train, y_train],[X_test, y_test]],
+                          verbose=100,
+                          early_stopping_rounds=10)
+
+    y_pred = xgb_reg.predict(X_test)
+    val_error = mean_squared_error(y_test, y_pred)
+    print("Validation MSE:", val_error)
+
+    return xgb_reg
+
+def check_overfitting_gb(X_train,y_train,X_test,y_test,n_estimators, \
+                          max_depth, min_samples_split, metric_max):
+    
+    """
+    Input:
+    - X_train: features of training data
+    - y_train: class label of training data
+    - X_test:  features of test data
+    - y_test:  class label of test data
+    
+    Model parameters
+    
+    
+    - n_estimators: number of trees in the foreset 
+    - max_depth: max number of levels in each decision tree
+    - min_samples_split: min number of data points placed in a node before the node is split
+    
+    Output:
+    - metric_max: maximal metric value
+    """
+    
+    rf_clf = make_pipeline(RobustScaler(),
+                           GradientBoostingClassifier(
+                            n_estimators=n_estimators,
+                            max_depth=max_depth,
+                            min_samples_split=min_samples_split)).fit(X=X_train, y=y_train)
+                               
+    y_pred4test    = rf_clf.predict(X_test)
+    y_pred4train   = rf_clf.predict(X_train)
+    
+
+    f14train = f1_score(y_train, y_pred4train, average='weighted')
+    f14test  = f1_score(y_test, y_pred4test, average='weighted')
+
+    metric = f14test - 1.5*abs(f14train-f14test)  #  play with the weights
+
+    if metric > metric_max:
+        print("n_estimators: {}, max_depth:{}, min_samples_split:{}" "\n"
+              "f1(weighted)/Train:{:.2f}, f1(weighted)/Test:{:.2f}, metric:{:.2f}".format(n_estimators,
+                                                                                          max_depth,
+                                                                                          min_samples_split,
+                                                                                          f14train,f14test,metric))
+        metric_max = metric
+    return metric_max
+
+

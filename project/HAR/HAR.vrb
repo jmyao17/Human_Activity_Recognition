@@ -1,0 +1,32 @@
+\frametitle{Code Example \#1}
+
+%\code{\textbf{import} numpy \textbf{as} np}
+
+ \begin{exampleblock}{XGBoost}
+
+      \begin{lstlisting}[language=Python]
+      def xgboost_fit_predict(X_train,y_train,X_test,y_test):
+            xgb_reg = xgboost.XGBClassifier(n_estimators=1000, random_state=42)
+            xgb_reg = xgb_reg.fit(X_train, y_train, eval_metric=["merror"],
+                              eval_set=[[X_train, y_train],[X_test, y_test]],
+                              verbose=100,
+                              early_stopping_rounds=10)
+
+            y_pred = xgb_reg.predict(X_test)
+            val_error = mean_squared_error(y_test, y_pred)
+            print("Validation MSE:", val_error)
+
+
+            y_pred4test        = xgb_reg.predict(X_test)
+            y_pred4train       = xgb_reg.predict(X_train)
+
+            xgb_clf_best_cm4test = metrics.confusion_matrix(y_test, y_pred4test)
+            xgb_clf_best_cm4train = metrics.confusion_matrix(y_train, y_pred4train)
+
+            print("F1 score for Test: {}".format(f1_score(y_test,y_pred4test, average='weighted')))
+            print("F1 score for Train: {}".format(f1_score(y_train,y_pred4train, average='weighted')))
+
+      \end{lstlisting}
+ \end{exampleblock}
+
+
