@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.4.16)  11 APR 2019 07:35
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.4.16)  11 APR 2019 08:09
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1173,11 +1173,20 @@ Overfull \hbox (1.38991pt too wide) has occurred while \output is active
 ]
 LaTeX Font Info:    Font shape `T1/phv/bx/n' in size <8> not available
 (Font)              Font shape `T1/phv/b/n' tried instead on input line 65.
-<./figs/activities.png, id=175, 426.393pt x 186.9384pt>
+<./figs/activities.png, id=175, 819.06pt x 199.947pt>
 File: ./figs/activities.png Graphic file (type png)
 <use ./figs/activities.png>
 Package pdftex.def Info: ./figs/activities.png  used on input line 65.
-(pdftex.def)             Requested size: 170.55417pt x 74.77403pt.
+(pdftex.def)             Requested size: 327.6182pt x 79.97737pt.
+
+Overfull \hbox (20.32832pt too wide) in paragraph at lines 65--65
+ [] 
+ []
+
+
+Overfull \vbox (3.19807pt too high) detected at line 65
+ []
+
 File: ./figs/frib-logo.jpg Graphic file (type jpg)
 <use ./figs/frib-logo.jpg>
 Package pdftex.def Info: ./figs/frib-logo.jpg  used on input line 65.
@@ -1874,7 +1883,7 @@ Package rerunfilecheck Info: File `HAR.out' has not changed.
 Here is how much of TeX's memory you used:
  27673 strings out of 492649
  546827 string characters out of 6129622
- 911459 words of memory out of 5000000
+ 912457 words of memory out of 5000000
  30875 multiletter control sequences out of 15000+600000
  45039 words of font info for 58 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -1891,7 +1900,7 @@ e/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texlive/
 /texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/local/texlive/2018/texmf-
 dist/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/local/texlive/2018/texmf-dist/fo
 nts/type1/urw/helvetic/uhvro8a.pfb>
-Output written on HAR.pdf (29 pages, 5138613 bytes).
+Output written on HAR.pdf (29 pages, 5329475 bytes).
 PDF statistics:
  1336 PDF objects out of 1440 (max. 8388607)
  1157 compressed objects within 12 object streams
