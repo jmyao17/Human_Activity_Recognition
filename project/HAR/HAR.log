@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.4.16)  11 APR 2019 21:00
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.4.16)  12 APR 2019 11:04
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1184,7 +1184,7 @@ Overfull \hbox (20.32832pt too wide) in paragraph at lines 65--65
  []
 
 
-Overfull \vbox (3.19807pt too high) detected at line 65
+Overfull \vbox (3.19801pt too high) detected at line 65
  []
 
 File: ./figs/frib-logo.jpg Graphic file (type jpg)
@@ -1250,7 +1250,7 @@ File: ./figs/paricipant01.png Graphic file (type png)
 Package pdftex.def Info: ./figs/paricipant01.png  used on input line 108.
 (pdftex.def)             Requested size: 261.3804pt x 189.71158pt.
 
-Overfull \vbox (14.87221pt too high) detected at line 108
+Overfull \vbox (15.05624pt too high) detected at line 108
  []
 
 File: ./figs/frib-logo.jpg Graphic file (type jpg)
@@ -1304,17 +1304,17 @@ Overfull \hbox (1.38991pt too wide) has occurred while \output is active
 <./figs/percentage_origin.png, id=419, 758.835pt x 308.15125pt>
 File: ./figs/percentage_origin.png Graphic file (type png)
 <use ./figs/percentage_origin.png>
-Package pdftex.def Info: ./figs/percentage_origin.png  used on input line 188.
+Package pdftex.def Info: ./figs/percentage_origin.png  used on input line 195.
 (pdftex.def)             Requested size: 136.5844pt x 55.46483pt.
-<./figs/percentage_balanced.png, id=420, 867.24pt x 289.08pt>
+<./figs/percentage_balanced.png, id=420, 758.835pt x 308.15125pt>
 File: ./figs/percentage_balanced.png Graphic file (type png)
 <use ./figs/percentage_balanced.png>
-Package pdftex.def Info: ./figs/percentage_balanced.png  used on input line 188
+Package pdftex.def Info: ./figs/percentage_balanced.png  used on input line 195
 .
-(pdftex.def)             Requested size: 156.09647pt x 52.03215pt.
+(pdftex.def)             Requested size: 136.5844pt x 55.46483pt.
 File: ./figs/frib-logo.jpg Graphic file (type jpg)
 <use ./figs/frib-logo.jpg>
-Package pdftex.def Info: ./figs/frib-logo.jpg  used on input line 188.
+Package pdftex.def Info: ./figs/frib-logo.jpg  used on input line 195.
 (pdftex.def)             Requested size: 15.89871pt x 20.30699pt.
 
 Overfull \hbox (1.38991pt too wide) has occurred while \output is active
@@ -1327,16 +1327,16 @@ Overfull \hbox (1.38991pt too wide) has occurred while \output is active
 <./figs/tSNE12.png, id=460, 733.74126pt x 433.62pt>
 File: ./figs/tSNE12.png Graphic file (type png)
 <use ./figs/tSNE12.png>
-Package pdftex.def Info: ./figs/tSNE12.png  used on input line 208.
+Package pdftex.def Info: ./figs/tSNE12.png  used on input line 215.
 (pdftex.def)             Requested size: 146.74565pt x 86.72246pt.
 <./figs/tSNE13.png, id=461, 733.74126pt x 433.62pt>
 File: ./figs/tSNE13.png Graphic file (type png)
 <use ./figs/tSNE13.png>
-Package pdftex.def Info: ./figs/tSNE13.png  used on input line 208.
+Package pdftex.def Info: ./figs/tSNE13.png  used on input line 215.
 (pdftex.def)             Requested size: 146.74565pt x 86.72246pt.
 File: ./figs/frib-logo.jpg Graphic file (type jpg)
 <use ./figs/frib-logo.jpg>
-Package pdftex.def Info: ./figs/frib-logo.jpg  used on input line 208.
+Package pdftex.def Info: ./figs/frib-logo.jpg  used on input line 215.
 (pdftex.def)             Requested size: 15.89871pt x 20.30699pt.
 
 Overfull \hbox (1.38991pt too wide) has occurred while \output is active
@@ -1349,16 +1349,16 @@ Overfull \hbox (1.38991pt too wide) has occurred while \output is active
 <./figs/tSNE12_X25.png, id=501, 733.74126pt x 433.62pt>
 File: ./figs/tSNE12_X25.png Graphic file (type png)
 <use ./figs/tSNE12_X25.png>
-Package pdftex.def Info: ./figs/tSNE12_X25.png  used on input line 226.
+Package pdftex.def Info: ./figs/tSNE12_X25.png  used on input line 233.
 (pdftex.def)             Requested size: 146.74565pt x 86.72246pt.
 <./figs/tSNE13_X25.png, id=502, 733.74126pt x 433.62pt>
 File: ./figs/tSNE13_X25.png Graphic file (type png)
 <use ./figs/tSNE13_X25.png>
-Package pdftex.def Info: ./figs/tSNE13_X25.png  used on input line 226.
+Package pdftex.def Info: ./figs/tSNE13_X25.png  used on input line 233.
 (pdftex.def)             Requested size: 146.74565pt x 86.72246pt.
 File: ./figs/frib-logo.jpg Graphic file (type jpg)
 <use ./figs/frib-logo.jpg>
-Package pdftex.def Info: ./figs/frib-logo.jpg  used on input line 226.
+Package pdftex.def Info: ./figs/frib-logo.jpg  used on input line 233.
 (pdftex.def)             Requested size: 15.89871pt x 20.30699pt.
 
 Overfull \hbox (1.38991pt too wide) has occurred while \output is active
@@ -1370,7 +1370,7 @@ Overfull \hbox (1.38991pt too wide) has occurred while \output is active
  <./figs/tSNE12_X25.png> <./figs/tSNE13_X25.png>]
 File: ./figs/frib-logo.jpg Graphic file (type jpg)
 <use ./figs/frib-logo.jpg>
-Package pdftex.def Info: ./figs/frib-logo.jpg  used on input line 233.
+Package pdftex.def Info: ./figs/frib-logo.jpg  used on input line 240.
 (pdftex.def)             Requested size: 15.89871pt x 20.30699pt.
 
 Overfull \hbox (1.38991pt too wide) has occurred while \output is active
@@ -1383,16 +1383,16 @@ Overfull \hbox (1.38991pt too wide) has occurred while \output is active
 <./figs/rf_cm_default_X34.png, id=581, 517.935pt x 410.53375pt>
 File: ./figs/rf_cm_default_X34.png Graphic file (type png)
 <use ./figs/rf_cm_default_X34.png>
-Package pdftex.def Info: ./figs/rf_cm_default_X34.png  used on input line 265.
+Package pdftex.def Info: ./figs/rf_cm_default_X34.png  used on input line 272.
 (pdftex.def)             Requested size: 103.58516pt x 82.10529pt.
 <./figs/importance.png, id=582, 713.66624pt x 831.105pt>
 File: ./figs/importance.png Graphic file (type png)
 <use ./figs/importance.png>
-Package pdftex.def Info: ./figs/importance.png  used on input line 265.
+Package pdftex.def Info: ./figs/importance.png  used on input line 272.
 (pdftex.def)             Requested size: 142.73071pt x 166.21805pt.
 File: ./figs/frib-logo.jpg Graphic file (type jpg)
 <use ./figs/frib-logo.jpg>
-Package pdftex.def Info: ./figs/frib-logo.jpg  used on input line 265.
+Package pdftex.def Info: ./figs/frib-logo.jpg  used on input line 272.
 (pdftex.def)             Requested size: 15.89871pt x 20.30699pt.
 
 Overfull \hbox (1.38991pt too wide) has occurred while \output is active
@@ -1404,23 +1404,23 @@ Overfull \hbox (1.38991pt too wide) has occurred while \output is active
  <./figs/rf_cm_default_X34.png> <./figs/importance.png>]
 File: ./figs/rf_cm_default_X34.png Graphic file (type png)
 <use ./figs/rf_cm_default_X34.png>
-Package pdftex.def Info: ./figs/rf_cm_default_X34.png  used on input line 297.
+Package pdftex.def Info: ./figs/rf_cm_default_X34.png  used on input line 304.
 (pdftex.def)             Requested size: 103.58516pt x 82.10529pt.
 <./figs/rf_X34_train_default_score.png, id=624, 671.50874pt x 415.5525pt>
 File: ./figs/rf_X34_train_default_score.png Graphic file (type png)
 <use ./figs/rf_X34_train_default_score.png>
 Package pdftex.def Info: ./figs/rf_X34_train_default_score.png  used on input l
-ine 297.
+ine 304.
 (pdftex.def)             Requested size: 134.29936pt x 83.10902pt.
 <./figs/rf_X34_test_default_score.png, id=625, 671.50874pt x 415.5525pt>
 File: ./figs/rf_X34_test_default_score.png Graphic file (type png)
 <use ./figs/rf_X34_test_default_score.png>
 Package pdftex.def Info: ./figs/rf_X34_test_default_score.png  used on input li
-ne 297.
+ne 304.
 (pdftex.def)             Requested size: 134.29936pt x 83.10902pt.
 File: ./figs/frib-logo.jpg Graphic file (type jpg)
 <use ./figs/frib-logo.jpg>
-Package pdftex.def Info: ./figs/frib-logo.jpg  used on input line 297.
+Package pdftex.def Info: ./figs/frib-logo.jpg  used on input line 304.
 (pdftex.def)             Requested size: 15.89871pt x 20.30699pt.
 
 Overfull \hbox (1.38991pt too wide) has occurred while \output is active
@@ -1434,21 +1434,21 @@ Overfull \hbox (1.38991pt too wide) has occurred while \output is active
 <./figs/rf_X34_train_score.png, id=665, 682.55pt x 419.5675pt>
 File: ./figs/rf_X34_train_score.png Graphic file (type png)
 <use ./figs/rf_X34_train_score.png>
-Package pdftex.def Info: ./figs/rf_X34_train_score.png  used on input line 340.
+Package pdftex.def Info: ./figs/rf_X34_train_score.png  used on input line 347.
 
 (pdftex.def)             Requested size: 136.50758pt x 83.912pt.
 <./figs/rf_X34_test_score.png, id=666, 682.55pt x 419.5675pt>
 File: ./figs/rf_X34_test_score.png Graphic file (type png)
 <use ./figs/rf_X34_test_score.png>
-Package pdftex.def Info: ./figs/rf_X34_test_score.png  used on input line 340.
+Package pdftex.def Info: ./figs/rf_X34_test_score.png  used on input line 347.
 (pdftex.def)             Requested size: 136.50758pt x 83.912pt.
 
-Overfull \vbox (2.64783pt too high) detected at line 340
+Overfull \vbox (2.64783pt too high) detected at line 347
  []
 
 File: ./figs/frib-logo.jpg Graphic file (type jpg)
 <use ./figs/frib-logo.jpg>
-Package pdftex.def Info: ./figs/frib-logo.jpg  used on input line 340.
+Package pdftex.def Info: ./figs/frib-logo.jpg  used on input line 347.
 (pdftex.def)             Requested size: 15.89871pt x 20.30699pt.
 
 Overfull \hbox (1.38991pt too wide) has occurred while \output is active
@@ -1460,28 +1460,28 @@ Overfull \hbox (1.38991pt too wide) has occurred while \output is active
  <./figs/rf_X34_train_score.png> <./figs/rf_X34_test_score.png>]
 File: ./figs/rf_X34_train_score.png Graphic file (type png)
 <use ./figs/rf_X34_train_score.png>
-Package pdftex.def Info: ./figs/rf_X34_train_score.png  used on input line 370.
+Package pdftex.def Info: ./figs/rf_X34_train_score.png  used on input line 377.
 
 (pdftex.def)             Requested size: 136.50758pt x 83.912pt.
 File: ./figs/rf_X34_test_score.png Graphic file (type png)
 <use ./figs/rf_X34_test_score.png>
-Package pdftex.def Info: ./figs/rf_X34_test_score.png  used on input line 370.
+Package pdftex.def Info: ./figs/rf_X34_test_score.png  used on input line 377.
 (pdftex.def)             Requested size: 136.50758pt x 83.912pt.
 <./figs/rf_X34_half_train_score.png, id=707, 682.55pt x 419.5675pt>
 File: ./figs/rf_X34_half_train_score.png Graphic file (type png)
 <use ./figs/rf_X34_half_train_score.png>
 Package pdftex.def Info: ./figs/rf_X34_half_train_score.png  used on input line
- 370.
+ 377.
 (pdftex.def)             Requested size: 136.50758pt x 83.912pt.
 <./figs/rf_X34_half_test_score.png, id=708, 682.55pt x 419.5675pt>
 File: ./figs/rf_X34_half_test_score.png Graphic file (type png)
 <use ./figs/rf_X34_half_test_score.png>
 Package pdftex.def Info: ./figs/rf_X34_half_test_score.png  used on input line 
-370.
+377.
 (pdftex.def)             Requested size: 136.50758pt x 83.912pt.
 File: ./figs/frib-logo.jpg Graphic file (type jpg)
 <use ./figs/frib-logo.jpg>
-Package pdftex.def Info: ./figs/frib-logo.jpg  used on input line 370.
+Package pdftex.def Info: ./figs/frib-logo.jpg  used on input line 377.
 (pdftex.def)             Requested size: 15.89871pt x 20.30699pt.
 
 Overfull \hbox (1.38991pt too wide) has occurred while \output is active
@@ -1495,27 +1495,27 @@ Overfull \hbox (1.38991pt too wide) has occurred while \output is active
 File: ./figs/rf_X25_half_train_score.png Graphic file (type png)
 <use ./figs/rf_X25_half_train_score.png>
 Package pdftex.def Info: ./figs/rf_X25_half_train_score.png  used on input line
- 402.
+ 409.
 (pdftex.def)             Requested size: 136.50758pt x 83.912pt.
 <./figs/rf_X25_half_test_score.png, id=750, 682.55pt x 419.5675pt>
 File: ./figs/rf_X25_half_test_score.png Graphic file (type png)
 <use ./figs/rf_X25_half_test_score.png>
 Package pdftex.def Info: ./figs/rf_X25_half_test_score.png  used on input line 
-402.
+409.
 (pdftex.def)             Requested size: 136.50758pt x 83.912pt.
 File: ./figs/rf_X34_half_train_score.png Graphic file (type png)
 <use ./figs/rf_X34_half_train_score.png>
 Package pdftex.def Info: ./figs/rf_X34_half_train_score.png  used on input line
- 402.
+ 409.
 (pdftex.def)             Requested size: 136.50758pt x 83.912pt.
 File: ./figs/rf_X34_half_test_score.png Graphic file (type png)
 <use ./figs/rf_X34_half_test_score.png>
 Package pdftex.def Info: ./figs/rf_X34_half_test_score.png  used on input line 
-402.
+409.
 (pdftex.def)             Requested size: 136.50758pt x 83.912pt.
 File: ./figs/frib-logo.jpg Graphic file (type jpg)
 <use ./figs/frib-logo.jpg>
-Package pdftex.def Info: ./figs/frib-logo.jpg  used on input line 402.
+Package pdftex.def Info: ./figs/frib-logo.jpg  used on input line 409.
 (pdftex.def)             Requested size: 15.89871pt x 20.30699pt.
 
 Overfull \hbox (1.38991pt too wide) has occurred while \output is active
@@ -1529,17 +1529,17 @@ Overfull \hbox (1.38991pt too wide) has occurred while \output is active
 File: ./figs/Precision_Test_Ovlp_Window_Size.png Graphic file (type png)
 <use ./figs/Precision_Test_Ovlp_Window_Size.png>
 Package pdftex.def Info: ./figs/Precision_Test_Ovlp_Window_Size.png  used on in
-put line 421.
+put line 428.
 (pdftex.def)             Requested size: 134.90503pt x 91.24158pt.
 <./figs/Recall_Test_Ovlp_Window_Size.png, id=791, 449.68pt x 304.13625pt>
 File: ./figs/Recall_Test_Ovlp_Window_Size.png Graphic file (type png)
 <use ./figs/Recall_Test_Ovlp_Window_Size.png>
 Package pdftex.def Info: ./figs/Recall_Test_Ovlp_Window_Size.png  used on input
- line 421.
+ line 428.
 (pdftex.def)             Requested size: 134.90503pt x 91.24158pt.
 File: ./figs/frib-logo.jpg Graphic file (type jpg)
 <use ./figs/frib-logo.jpg>
-Package pdftex.def Info: ./figs/frib-logo.jpg  used on input line 421.
+Package pdftex.def Info: ./figs/frib-logo.jpg  used on input line 428.
 (pdftex.def)             Requested size: 15.89871pt x 20.30699pt.
 
 Overfull \hbox (1.38991pt too wide) has occurred while \output is active
@@ -1553,39 +1553,39 @@ ize.png>]
 <./figs/KNN.png, id=831, 406.51875pt x 347.2975pt>
 File: ./figs/KNN.png Graphic file (type png)
 <use ./figs/KNN.png>
-Package pdftex.def Info: ./figs/KNN.png  used on input line 445.
+Package pdftex.def Info: ./figs/KNN.png  used on input line 452.
 (pdftex.def)             Requested size: 121.95656pt x 104.19005pt.
 <./figs/knn_X34_half_test_score_k.png, id=832, 434.62375pt x 303.1325pt>
 File: ./figs/knn_X34_half_test_score_k.png Graphic file (type png)
 <use ./figs/knn_X34_half_test_score_k.png>
 Package pdftex.def Info: ./figs/knn_X34_half_test_score_k.png  used on input li
-ne 445.
+ne 452.
 (pdftex.def)             Requested size: 130.38812pt x 90.94044pt.
 <./figs/knn_X34_half_train_score.png, id=833, 682.55pt x 419.5675pt>
 File: ./figs/knn_X34_half_train_score.png Graphic file (type png)
 <use ./figs/knn_X34_half_train_score.png>
 Package pdftex.def Info: ./figs/knn_X34_half_train_score.png  used on input lin
-e 445.
+e 452.
 (pdftex.def)             Requested size: 156.9832pt x 96.49849pt.
 <./figs/knn_X34_half_test_score.png, id=834, 682.55pt x 419.5675pt>
 File: ./figs/knn_X34_half_test_score.png Graphic file (type png)
 <use ./figs/knn_X34_half_test_score.png>
 Package pdftex.def Info: ./figs/knn_X34_half_test_score.png  used on input line
- 445.
+ 452.
 (pdftex.def)             Requested size: 156.9832pt x 96.49849pt.
 
-Overfull \hbox (3.33827pt too wide) in paragraph at lines 445--445
+Overfull \hbox (3.33827pt too wide) in paragraph at lines 452--452
  [] 
  []
 
 
-Overfull \hbox (3.33827pt too wide) in paragraph at lines 445--445
+Overfull \hbox (3.33827pt too wide) in paragraph at lines 452--452
  [] 
  []
 
 File: ./figs/frib-logo.jpg Graphic file (type jpg)
 <use ./figs/frib-logo.jpg>
-Package pdftex.def Info: ./figs/frib-logo.jpg  used on input line 445.
+Package pdftex.def Info: ./figs/frib-logo.jpg  used on input line 452.
 (pdftex.def)             Requested size: 15.89871pt x 20.30699pt.
 
 Overfull \hbox (1.38991pt too wide) has occurred while \output is active
@@ -1599,33 +1599,33 @@ rain_score.png> <./figs/knn_X34_half_test_score.png>]
 <./figs/svc.png, id=878, 108.405pt x 105.33353pt>
 File: ./figs/svc.png Graphic file (type png)
 <use ./figs/svc.png>
-Package pdftex.def Info: ./figs/svc.png  used on input line 475.
+Package pdftex.def Info: ./figs/svc.png  used on input line 482.
 (pdftex.def)             Requested size: 108.40472pt x 105.33325pt.
 <./figs/svc_X34_half_train_score.png, id=879, 682.55pt x 419.5675pt>
 File: ./figs/svc_X34_half_train_score.png Graphic file (type png)
 <use ./figs/svc_X34_half_train_score.png>
 Package pdftex.def Info: ./figs/svc_X34_half_train_score.png  used on input lin
-e 475.
+e 482.
 (pdftex.def)             Requested size: 156.9832pt x 96.49849pt.
 <./figs/svc_X34_half_test_score.png, id=880, 682.55pt x 419.5675pt>
 File: ./figs/svc_X34_half_test_score.png Graphic file (type png)
 <use ./figs/svc_X34_half_test_score.png>
 Package pdftex.def Info: ./figs/svc_X34_half_test_score.png  used on input line
- 475.
+ 482.
 (pdftex.def)             Requested size: 156.9832pt x 96.49849pt.
 
-Overfull \hbox (3.33827pt too wide) in paragraph at lines 475--475
+Overfull \hbox (3.33827pt too wide) in paragraph at lines 482--482
  [] 
  []
 
 
-Overfull \hbox (3.33827pt too wide) in paragraph at lines 475--475
+Overfull \hbox (3.33827pt too wide) in paragraph at lines 482--482
  [] 
  []
 
 File: ./figs/frib-logo.jpg Graphic file (type jpg)
 <use ./figs/frib-logo.jpg>
-Package pdftex.def Info: ./figs/frib-logo.jpg  used on input line 475.
+Package pdftex.def Info: ./figs/frib-logo.jpg  used on input line 482.
 (pdftex.def)             Requested size: 15.89871pt x 20.30699pt.
 
 Overfull \hbox (1.38991pt too wide) has occurred while \output is active
@@ -1639,31 +1639,31 @@ st_score.png>]
 <./figs/voting.png, id=921, 741.4902pt x 505.89pt>
 File: ./figs/voting.png Graphic file (type png)
 <use ./figs/voting.png>
-Package pdftex.def Info: ./figs/voting.png  used on input line 506.
+Package pdftex.def Info: ./figs/voting.png  used on input line 513.
 (pdftex.def)             Requested size: 148.29541pt x 101.1762pt.
 <./figs/voting_X34_train.png, id=922, 682.55pt x 419.5675pt>
 File: ./figs/voting_X34_train.png Graphic file (type png)
 <use ./figs/voting_X34_train.png>
-Package pdftex.def Info: ./figs/voting_X34_train.png  used on input line 506.
+Package pdftex.def Info: ./figs/voting_X34_train.png  used on input line 513.
 (pdftex.def)             Requested size: 156.9832pt x 96.49849pt.
 <./figs/voting_X34_test.png, id=923, 682.55pt x 419.5675pt>
 File: ./figs/voting_X34_test.png Graphic file (type png)
 <use ./figs/voting_X34_test.png>
-Package pdftex.def Info: ./figs/voting_X34_test.png  used on input line 506.
+Package pdftex.def Info: ./figs/voting_X34_test.png  used on input line 513.
 (pdftex.def)             Requested size: 156.9832pt x 96.49849pt.
 
-Overfull \hbox (3.33827pt too wide) in paragraph at lines 506--506
+Overfull \hbox (3.33827pt too wide) in paragraph at lines 513--513
  [] 
  []
 
 
-Overfull \hbox (3.33827pt too wide) in paragraph at lines 506--506
+Overfull \hbox (3.33827pt too wide) in paragraph at lines 513--513
  [] 
  []
 
 File: ./figs/frib-logo.jpg Graphic file (type jpg)
 <use ./figs/frib-logo.jpg>
-Package pdftex.def Info: ./figs/frib-logo.jpg  used on input line 506.
+Package pdftex.def Info: ./figs/frib-logo.jpg  used on input line 513.
 (pdftex.def)             Requested size: 15.89871pt x 20.30699pt.
 
 Overfull \hbox (1.38991pt too wide) has occurred while \output is active
@@ -1677,31 +1677,31 @@ Overfull \hbox (1.38991pt too wide) has occurred while \output is active
 <./figs/bagging.png, id=964, 1006.76125pt x 743.77875pt>
 File: ./figs/bagging.png Graphic file (type png)
 <use ./figs/bagging.png>
-Package pdftex.def Info: ./figs/bagging.png  used on input line 536.
+Package pdftex.def Info: ./figs/bagging.png  used on input line 543.
 (pdftex.def)             Requested size: 151.00766pt x 111.562pt.
 <./figs/bagging_X34_train.png, id=965, 682.55pt x 419.5675pt>
 File: ./figs/bagging_X34_train.png Graphic file (type png)
 <use ./figs/bagging_X34_train.png>
-Package pdftex.def Info: ./figs/bagging_X34_train.png  used on input line 536.
+Package pdftex.def Info: ./figs/bagging_X34_train.png  used on input line 543.
 (pdftex.def)             Requested size: 156.9832pt x 96.49849pt.
 <./figs/bagging_X34_test.png, id=966, 682.55pt x 419.5675pt>
 File: ./figs/bagging_X34_test.png Graphic file (type png)
 <use ./figs/bagging_X34_test.png>
-Package pdftex.def Info: ./figs/bagging_X34_test.png  used on input line 536.
+Package pdftex.def Info: ./figs/bagging_X34_test.png  used on input line 543.
 (pdftex.def)             Requested size: 156.9832pt x 96.49849pt.
 
-Overfull \hbox (3.33827pt too wide) in paragraph at lines 536--536
+Overfull \hbox (3.33827pt too wide) in paragraph at lines 543--543
  [] 
  []
 
 
-Overfull \hbox (3.33827pt too wide) in paragraph at lines 536--536
+Overfull \hbox (3.33827pt too wide) in paragraph at lines 543--543
  [] 
  []
 
 File: ./figs/frib-logo.jpg Graphic file (type jpg)
 <use ./figs/frib-logo.jpg>
-Package pdftex.def Info: ./figs/frib-logo.jpg  used on input line 536.
+Package pdftex.def Info: ./figs/frib-logo.jpg  used on input line 543.
 (pdftex.def)             Requested size: 15.89871pt x 20.30699pt.
 
 Overfull \hbox (1.38991pt too wide) has occurred while \output is active
@@ -1715,31 +1715,31 @@ ng>]
 <./figs/boosting.png, id=1008, 554.07pt x 408.52625pt>
 File: ./figs/boosting.png Graphic file (type png)
 <use ./figs/boosting.png>
-Package pdftex.def Info: ./figs/boosting.png  used on input line 568.
+Package pdftex.def Info: ./figs/boosting.png  used on input line 575.
 (pdftex.def)             Requested size: 138.51715pt x 102.1313pt.
 <./figs/xgb_X34_train.png, id=1009, 682.55pt x 419.5675pt>
 File: ./figs/xgb_X34_train.png Graphic file (type png)
 <use ./figs/xgb_X34_train.png>
-Package pdftex.def Info: ./figs/xgb_X34_train.png  used on input line 568.
+Package pdftex.def Info: ./figs/xgb_X34_train.png  used on input line 575.
 (pdftex.def)             Requested size: 156.9832pt x 96.49849pt.
 <./figs/xgb_X34_test.png, id=1010, 682.55pt x 419.5675pt>
 File: ./figs/xgb_X34_test.png Graphic file (type png)
 <use ./figs/xgb_X34_test.png>
-Package pdftex.def Info: ./figs/xgb_X34_test.png  used on input line 568.
+Package pdftex.def Info: ./figs/xgb_X34_test.png  used on input line 575.
 (pdftex.def)             Requested size: 156.9832pt x 96.49849pt.
 
-Overfull \hbox (3.33827pt too wide) in paragraph at lines 568--568
+Overfull \hbox (3.33827pt too wide) in paragraph at lines 575--575
  [] 
  []
 
 
-Overfull \hbox (3.33827pt too wide) in paragraph at lines 568--568
+Overfull \hbox (3.33827pt too wide) in paragraph at lines 575--575
  [] 
  []
 
 File: ./figs/frib-logo.jpg Graphic file (type jpg)
 <use ./figs/frib-logo.jpg>
-Package pdftex.def Info: ./figs/frib-logo.jpg  used on input line 568.
+Package pdftex.def Info: ./figs/frib-logo.jpg  used on input line 575.
 (pdftex.def)             Requested size: 15.89871pt x 20.30699pt.
 
 Overfull \hbox (1.38991pt too wide) has occurred while \output is active
@@ -1753,31 +1753,31 @@ st.png>]
 <./figs/comparison_precision.png, id=1050, 1003.75pt x 418.56375pt>
 File: ./figs/comparison_precision.png Graphic file (type png)
 <use ./figs/comparison_precision.png>
-Package pdftex.def Info: ./figs/comparison_precision.png  used on input line 60
-5.
+Package pdftex.def Info: ./figs/comparison_precision.png  used on input line 61
+2.
 (pdftex.def)             Requested size: 190.71448pt x 79.52792pt.
 <./figs/comparison_recall.png, id=1051, 1003.75pt x 418.56375pt>
 File: ./figs/comparison_recall.png Graphic file (type png)
 <use ./figs/comparison_recall.png>
-Package pdftex.def Info: ./figs/comparison_recall.png  used on input line 605.
+Package pdftex.def Info: ./figs/comparison_recall.png  used on input line 612.
 (pdftex.def)             Requested size: 190.71448pt x 79.52792pt.
 
-Overfull \hbox (6.33868pt too wide) in paragraph at lines 605--605
+Overfull \hbox (6.33868pt too wide) in paragraph at lines 612--612
  [] 
  []
 
 
-Overfull \hbox (6.33868pt too wide) in paragraph at lines 605--605
+Overfull \hbox (6.33868pt too wide) in paragraph at lines 612--612
  [] 
  []
 
 File: ./figs/percentage_origin.png Graphic file (type png)
 <use ./figs/percentage_origin.png>
-Package pdftex.def Info: ./figs/percentage_origin.png  used on input line 605.
+Package pdftex.def Info: ./figs/percentage_origin.png  used on input line 612.
 (pdftex.def)             Requested size: 121.41608pt x 49.30519pt.
 File: ./figs/frib-logo.jpg Graphic file (type jpg)
 <use ./figs/frib-logo.jpg>
-Package pdftex.def Info: ./figs/frib-logo.jpg  used on input line 605.
+Package pdftex.def Info: ./figs/frib-logo.jpg  used on input line 612.
 (pdftex.def)             Requested size: 15.89871pt x 20.30699pt.
 
 Overfull \hbox (1.38991pt too wide) has occurred while \output is active
@@ -1789,7 +1789,7 @@ Overfull \hbox (1.38991pt too wide) has occurred while \output is active
  <./figs/comparison_precision.png> <./figs/comparison_recall.png>]
 File: ./figs/frib-logo.jpg Graphic file (type jpg)
 <use ./figs/frib-logo.jpg>
-Package pdftex.def Info: ./figs/frib-logo.jpg  used on input line 607.
+Package pdftex.def Info: ./figs/frib-logo.jpg  used on input line 614.
 (pdftex.def)             Requested size: 15.89871pt x 20.30699pt.
 
 Overfull \hbox (1.38991pt too wide) has occurred while \output is active
@@ -1801,7 +1801,7 @@ Overfull \hbox (1.38991pt too wide) has occurred while \output is active
 ]
 File: ./figs/frib-logo.jpg Graphic file (type jpg)
 <use ./figs/frib-logo.jpg>
-Package pdftex.def Info: ./figs/frib-logo.jpg  used on input line 634.
+Package pdftex.def Info: ./figs/frib-logo.jpg  used on input line 641.
 (pdftex.def)             Requested size: 15.89871pt x 20.30699pt.
 
 Overfull \hbox (1.38991pt too wide) has occurred while \output is active
@@ -1814,11 +1814,11 @@ Overfull \hbox (1.38991pt too wide) has occurred while \output is active
 <./figs/hotdog.png, id=1168, 899.0388pt x 251.9814pt>
 File: ./figs/hotdog.png Graphic file (type png)
 <use ./figs/hotdog.png>
-Package pdftex.def Info: ./figs/hotdog.png  used on input line 645.
+Package pdftex.def Info: ./figs/hotdog.png  used on input line 652.
 (pdftex.def)             Requested size: 269.71371pt x 75.59499pt.
 File: ./figs/frib-logo.jpg Graphic file (type jpg)
 <use ./figs/frib-logo.jpg>
-Package pdftex.def Info: ./figs/frib-logo.jpg  used on input line 645.
+Package pdftex.def Info: ./figs/frib-logo.jpg  used on input line 652.
 (pdftex.def)             Requested size: 15.89871pt x 20.30699pt.
 
 Overfull \hbox (1.38991pt too wide) has occurred while \output is active
@@ -1836,7 +1836,7 @@ File: lstlang1.sty 2015/06/04 1.6 listings language file
 ))
 File: ./figs/frib-logo.jpg Graphic file (type jpg)
 <use ./figs/frib-logo.jpg>
-Package pdftex.def Info: ./figs/frib-logo.jpg  used on input line 680.
+Package pdftex.def Info: ./figs/frib-logo.jpg  used on input line 688.
 (pdftex.def)             Requested size: 15.89871pt x 20.30699pt.
 
 Overfull \hbox (1.38991pt too wide) has occurred while \output is active
@@ -1849,16 +1849,11 @@ Overfull \hbox (1.38991pt too wide) has occurred while \output is active
 <./figs/xgb_epoch.png, id=1245, 652.4375pt x 408.52625pt>
 File: ./figs/xgb_epoch.png Graphic file (type png)
 <use ./figs/xgb_epoch.png>
-Package pdftex.def Info: ./figs/xgb_epoch.png  used on input line 688.
-(pdftex.def)             Requested size: 326.21794pt x 204.26262pt.
-
-Overfull \hbox (18.92807pt too wide) in paragraph at lines 688--688
- [][] 
- []
-
+Package pdftex.def Info: ./figs/xgb_epoch.png  used on input line 698.
+(pdftex.def)             Requested size: 260.97037pt x 163.4076pt.
 File: ./figs/frib-logo.jpg Graphic file (type jpg)
 <use ./figs/frib-logo.jpg>
-Package pdftex.def Info: ./figs/frib-logo.jpg  used on input line 688.
+Package pdftex.def Info: ./figs/frib-logo.jpg  used on input line 698.
 (pdftex.def)             Requested size: 15.89871pt x 20.30699pt.
 
 Overfull \hbox (1.38991pt too wide) has occurred while \output is active
@@ -1877,18 +1872,18 @@ Overfull \hbox (1.38991pt too wide) has occurred while \output is active
 \tf@snm=\write10
 \openout10 = `HAR.snm'.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 692.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 692.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 702.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 702.
  (./HAR.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 692.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 692.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 702.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 702.
 Package rerunfilecheck Info: File `HAR.out' has not changed.
 (rerunfilecheck)             Checksum: 6A5DA506557DAD085A012A302275A294;202.
  ) 
 Here is how much of TeX's memory you used:
  27671 strings out of 492649
  546791 string characters out of 6129622
- 877454 words of memory out of 5000000
+ 885458 words of memory out of 5000000
  30873 multiletter control sequences out of 15000+600000
  45039 words of font info for 58 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -1905,7 +1900,7 @@ e/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texlive/
 /texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/local/texlive/2018/texmf-
 dist/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/local/texlive/2018/texmf-dist/fo
 nts/type1/urw/helvetic/uhvro8a.pfb>
-Output written on HAR.pdf (29 pages, 5339367 bytes).
+Output written on HAR.pdf (29 pages, 5337404 bytes).
 PDF statistics:
  1336 PDF objects out of 1440 (max. 8388607)
  1157 compressed objects within 12 object streams

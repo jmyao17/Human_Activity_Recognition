@@ -21,6 +21,7 @@
             print("F1 score for Test: {}".format(f1_score(y_test,y_pred4test, average='weighted')))
             print("F1 score for Train: {}".format(f1_score(y_train,y_pred4train, average='weighted')))
 
+            return xgb_clf
       \end{lstlisting}
  \end{exampleblock}
 

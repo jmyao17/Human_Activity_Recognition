@@ -44,15 +44,15 @@
 
 
 
-\begin{frame}{Introduction to the problem and dataset}
+\begin{frame}{Introduction to the dataset/problem}
 
-        \begin{block}{Seven activities (Challenge as not mutually exclusive)}
+        \begin{block}{7 classes for 15 participants (\emph{only 4 distinguishable activities})}
                             \begin{enumerate}
-                            \item Working at Computer
-                            \item Standing Up, \emph{Walking } and \exemple{Going Up/Downstairs}
+                            \item \textcolor{Violet}{Working} at Computer
+                            \item Standing Up, \emph{Walking } and \textcolor{blue}{Going Up/Downstairs}
                             \item  \alert{Standing}
                             \item \emph{Walking}
-                            \item \exemple{Going Up/Down Stairs}
+                            \item \textcolor{blue}{Going Up/Down Stairs}
                             \item  \emph{Walking} and Talking with Someone
                             \item Talking while \alert{Standing}
                     \end{enumerate}
@@ -98,8 +98,8 @@
 
 \section{Exploratory data analysis}
 
-\begin{frame}{Exploratory data analysis: raw data}
-        \begin{block}{An example data: participant 1}
+\begin{frame}{Exploratory data analysis: explore the data}
+        \begin{block}{Raw data for participant 1}
                      \begin{figure}
                 \includegraphics[scale=0.35]{./figs/paricipant01.png}
                 \end{figure} 
@@ -109,7 +109,7 @@
 
 
 
-\begin{frame}{Exploratory data analysis: raw data}
+\begin{frame}{Exploratory data analysis: feature extraction}
 
 
         \begin{block}{Feature extraction}
@@ -151,7 +151,7 @@
 
 
 
-\begin{frame}{Exploratory data analysis: raw data}
+\begin{frame}{Exploratory data analysis: feature extraction}
         \begin{block}{Fast Fourier Transformation (FFT)}
         \begin{equation}
         	X_k = \sum_{n=0}^{N-1} x_n e^{-i2\pi k n/N}  \qquad k = 0,\dots,N-1 
@@ -171,7 +171,7 @@
 \end{frame}
 
 
-\begin{frame}{Exploratory data analysis: sample data}
+\begin{frame}{Exploratory data analysis: check the samples}
         \begin{block}{Imbalanced data}    
         \begin{itemize}
                 \item Multi-class classification with imbalanced data is challenge. 
@@ -185,11 +185,18 @@
                     \end{figure} 
    	 \end{block}
 	
+	\begin{block}{Dimension of the data for training/test models}  
+	\begin{itemize}
+            \item  Training data:  (21684/10844, 34/25)
+            \item Test data:  (5422/2711, 34/25) 
+            \end{itemize}
+        \end{block}
+
 \end{frame}
 
 
  
-\begin{frame}{Exploratory data analysis: sample data}
+\begin{frame}{Exploratory data analysis: explore the samples}
         \begin{block}{t-distributed Stochastic Neighbor Embedding (t-SNE)}    
         \begin{itemize}
                 \item reduces dimensionality, trying to keep similar (dissimilar) instances close  (apart)
@@ -207,7 +214,7 @@
 	
 \end{frame}
 
-\begin{frame}{Exploratory data analysis: sample data}
+\begin{frame}{Exploratory data analysis: explore the samples}
 
         \begin{block}{t-distributed Stochastic Neighbor Embedding (t-SNE)}    
         \begin{itemize}
@@ -673,6 +680,7 @@
             print("F1 score for Test: {}".format(f1_score(y_test,y_pred4test, average='weighted')))
             print("F1 score for Train: {}".format(f1_score(y_train,y_pred4train, average='weighted'))) 
             
+            return xgb_clf
       \end{lstlisting}
  \end{exampleblock}
 
@@ -682,8 +690,10 @@
 
   
 \begin{frame}{XGBoost: merror in train and test}    
- 
-   \centering \includegraphics[scale=0.5]{./figs/xgb_epoch.png}
+  \begin{equation} 
+J(\Theta)= -\dfrac{1}{M} \sum^M_{m=1} \sum^K_{k=1}\left[ y^{(m)}_k\log \widehat p^{(m)}_k\right]
+  \end{equation}
+   \centering \includegraphics[scale=0.4]{./figs/xgb_epoch.png}
    
   \end{frame}
 
