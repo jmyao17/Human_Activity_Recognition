@@ -14,6 +14,7 @@ from matplotlib.ticker import (MultipleLocator, FormatStrFormatter,
                                AutoMinorLocator)
 
 
+from sklearn.metrics import accuracy_score
 from sklearn.svm import LinearSVC, SVC 
 from sklearn.model_selection import cross_val_score
 from sklearn.pipeline import Pipeline
@@ -38,7 +39,8 @@ from sklearn.metrics import mean_squared_error
 from sklearn.metrics import confusion_matrix, f1_score
 
 import xgboost
-
+import xgboost as xgb
+from xgboost import XGBClassifier
 
 import time
 import keras 
@@ -62,7 +64,7 @@ import statsmodels.api as sm
 from scipy.stats import skew,kurtosis
 from scipy.stats import norm
 
- import hickle as hkl
+import hickle as hkl
 
 
 import warnings
@@ -920,20 +922,18 @@ def check_overfitting_rf(X_train,y_train,X_test,y_test,n_estimators, \
         metric_max = metric
     return metric_max
 
+
 def xgboost_fit_predict(X_train,y_train,X_test,y_test):
     
-    xgb_reg = xgboost.XGBClassifier(n_estimators=1000, random_state=42)
+    xgb_clf = xgb.XGBClassifier(n_estimators=700, random_state=42) 
     
-    xgb_reg = xgb_reg.fit(X_train, y_train,
-                          eval_set=[[X_train, y_train],[X_test, y_test]],
-                          verbose=100,
-                          early_stopping_rounds=10)
+    eval_set = [[X_train, y_train],[X_test, y_test]]
+    xgb_clf = xgb_clf.fit(X_train, y_train, eval_metric=["mlogloss"],
+                          eval_set= eval_set, 
+                          verbose=50,
+                          early_stopping_rounds=2) # control overfitting
+    return xgb_clf
 
-    y_pred = xgb_reg.predict(X_test)
-    val_error = mean_squared_error(y_test, y_pred)
-    print("Validation MSE:", val_error)
-
-    return xgb_reg
 
 def check_overfitting_gb(X_train,y_train,X_test,y_test,n_estimators, \
                           max_depth, min_samples_split, metric_max):
